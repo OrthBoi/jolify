@@ -1,4 +1,4 @@
-# Jolify 🙈
+# Jolify 1.2.0 🙈
 ## Python Application to block websites on a device*
 
 Features:
@@ -11,6 +11,7 @@ Features:
 
 ## DOCUMENTATION
 ### Use case
+To start simply download jolify.exe and run it!
 This project IS NOT meant to replace professional blocker apps or network wide router dns blocking. 
 This application is meant for quick and dirty use without installing a app or tinkering with complicated router settings.
 The targeted audience are people who are not experienced with tech and want a guided way of blocking websites on their personal Windows PC
