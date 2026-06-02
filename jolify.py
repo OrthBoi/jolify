@@ -1,9 +1,11 @@
 #ToDo: Take reused functions and put them in a seperate method, also put the diffrent menu items into methods to clean up main code.
 
 import os
-import win32com 
+
 
 sys32hosts = r"C:\Windows\System32\drivers\etc\hosts"
+# path for developement hostfile
+#  r"C:\Users\maxim\Desktop\jolify\testhosts.txt"
 
 
 
@@ -92,7 +94,7 @@ def presetSocialMedia():
 
 def main():
     
-    print("Welcome to Jolify, the all in one Host manager!\n When prompted for input, please answer with either 'y' or 'n'\n")
+    print("Welcome to Jolify 1.2.0, the all in one Host manager!\n When prompted for input, please answer with either 'y' or 'n'\n")
     
     while True:
 
