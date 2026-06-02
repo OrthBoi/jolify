@@ -7,10 +7,11 @@ Features:
 - Social Media preset**
 - Display current host file
 - Custom IP mapping for home router/nas/etc use
+- Clearing of host file
 
 ## DOCUMENTATION
 ### Use case
-This project IS NOT meant to replace professional blocker apps or network white router dns blocking. 
+This project IS NOT meant to replace professional blocker apps or network wide router dns blocking. 
 This application is meant for quick and dirty use without installing a app or tinkering with complicated router settings.
 The targeted audience are people who are not experienced with tech and want a guided way of blocking websites on their personal Windows PC
 
