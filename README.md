@@ -10,20 +10,28 @@ Features:
 - Clearing of host file
 
 ## DOCUMENTATION
-### Use case
-To start simply download jolify.exe and run it!
-This project IS NOT meant to replace professional blocker apps or network wide router dns blocking. 
-This application is meant for quick and dirty use without installing a app or tinkering with complicated router settings.
-The targeted audience are people who are not experienced with tech and want a guided way of blocking websites on their personal Windows PC
+### Detailed description
+Jolify is simple python application build with one goal in mind: Modify the host file in the Windows32 folder in all possible ways.
+By modifying this file the user can manually "block" websites by forcing the computer to use the host file as a dns lookup.
+This does not replace a network wide router website blocker and is device specific.
 
-### Tutorial
-Upon opening the app you will be greeted with a menu, choose the feature you want to use. Do not close the application while its working, as this could damage the system file. If at any point the application stops responding, close it, restart and please check with the view feature if the file has been corrupted!
-The app should explain itself, if you have any questions, write me a Email @ maxim.kohanov@protonmail.com
+### How to build
+To build Jolify yourself:
+1. Pull the Repo
+2. Make sure PyInstaller is installed using 'python -m pip install PyInstaller'
+3. Go into the repo and execute 'python -m PyInstaller --uac-admin --onefile --icon=jolify.ico jolify.py'
+4. Wait for it to finish then go into "dist" folder and click on "jolify.exe"
+
+### Use case
+Want to make some website unreachable for a childs computer or maybe your router doesnt offer a simple domain to access it in your network?
+With Jolify you can do exactly that! You dont need a website blocking app nore do you need to mess around with your router settings. 
+The only thing you need is this one application (which you can even delete after use, the settings will be kept), even your grandma can use Jolify with ease!
 
 ### *Discplaimers
+This is a personal learning project, you may use Jolify at your own risk.
 *It isnt guarenteed that API's of Website's will get blocked. Websites will only get blocked on the devic you ran the app on
 **The templates do not block all 18+ / Social Media apps, as it works using a predifined list. (feel free to add more sites using a pull request!)
-As this application edits a system file, errors could potentially accour. I do not bear any consequences for any damages, use at your own risk.
+
 
 
 Maxim Kohanov
