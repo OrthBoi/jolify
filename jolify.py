@@ -1,6 +1,10 @@
+#ToDo: Take reused functions and put them in a seperate method, also put the diffrent menu items into methods to clean up main code.
+
 import os
+import win32com 
 
 sys32hosts = r"C:\Windows\System32\drivers\etc\hosts"
+
 
 
 def presetEighteenPlus():
@@ -88,23 +92,29 @@ def presetSocialMedia():
 
 def main():
     
-    print("Welcome to Jolify!")
+    print("Welcome to Jolify, the all in one Host manager!\n When prompted for input, please answer with either 'y' or 'n'\n")
+    
     while True:
 
         content = "Empty"
         with open(sys32hosts, "r+") as f:
                     content = f.read()
 
-        print("1. Block website")
+        # Display menu
+        print("1. Block website's")
         print("2. Block major 18+ sites")
         print("3. Block Social Media")
         print("4. Show current content")
         print("5. Unblock a website")
+        print("6. Custom IP mapping")
+        print("7. Reset hosts file")
+        print("9. Customer Support")
         print("10. Exit")
 
         choice = input("Choose an option: ").strip()
 
         if choice == "1":
+            print("")
             while True:
                 isAdded = False
                 site = input("Enter website (example.com): ").strip()
@@ -140,17 +150,21 @@ def main():
                     break
 
         elif choice == "2":
+            print("")
             presetEighteenPlus()
 
         elif choice == "3":
+            print("")
             presetSocialMedia()
 
         
 
         elif choice == "4":
+            print("")
             print(f"{content}" + "\n")
 
         elif choice == "5":
+            print("")
             unblockSite = input("Enter website to unblock (example.com): ").strip()
 
             entries = [
@@ -166,12 +180,59 @@ def main():
                     if line.strip() not in entries:
                         newLines.append(line)
                 
-                print(f"{unblockSite} has been unblocked succesfully!")
+                print(f"{unblockSite} has been unblocked succesfully!\n")
 
             with open(sys32hosts, "w") as f:
                 f.writelines(newLines)
-                        
-                    
+
+        elif choice == "6":
+            print("")
+            while True:
+                isAdded = False
+                print("INFORMATION: With this option you can reroute your router IP or your Nas IP to a custom website.\nBeware that this is only avaible only on your local computer and doesnt create a new domain entry in the world wide web")
+                IPInput = input("Enter your Router/NAS/etc IP (for example: 192.168.1.1): ").strip()
+                siteOutput = input("Enter desired name (for example: MyRouter.com): ").strip()
+                
+                entries = [
+                    f"{siteOutput} {IPInput}",
+                    f"{siteOutput} www.{IPInput}"
+                ]
+
+                with open(sys32hosts, "r") as f:
+                    lines = f.readlines()
+                    newLines = []
+                    for line in lines:
+                        if line.strip() not in entries:
+                            newLines.append(line)
+                        else:
+                            print(f"This connection is already mapped!")
+                            isAdded = True
+
+                    if isAdded == False:
+                        with open(sys32hosts, "w") as f:
+                            f.writelines(newLines)
+                            f.write("\n# ADDED BY JOLIFY - Custom IP mapping\n")
+                            for entry in entries:
+                                f.write(entry + "\n")
+                
+               
+                            
+
+                print(f"IP mapped successfully!")
+                mapMore = input("Map another IP?: ").lower().strip()
+                if mapMore == "n" or mapMore == "n":
+                    break
+             
+        elif choice == "7":
+            deleteEntries = input("Are you sure you want to reset your hosts file? This will remove ALL entries: ").lower().strip()
+            print("")
+            if deleteEntries == "y" or deleteEntries == "yes":
+                with open(sys32hosts, "w") as f:
+                    f.write("HOST FILE CLEARED BY JOLIFY\n\n# This file contains the mappings of IP addresses to host names.\n# Each entry should be kept on an individual line. \n# The IP address should be placed in the first column followed by the corresponding host name.\n# The IP address and the host name should be separated by at least one space.\n# Additionally, comments (such as these) may be inserted on individual lines or following the machine name denoted by a '#' symbol.\n")
+
+        elif choice == "9":
+            print("")
+            print("For customer support, please contact me at: maxim.kohanov@protonmail.com \nFor bug reports, please create an issue on the GitHub repository: https://github.com/OrthBoi/jolify\n")
 
         elif choice == "10":
             break
