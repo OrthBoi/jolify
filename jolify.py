@@ -68,6 +68,9 @@ def presetSocialMedia():
         "127.0.0.1 reddit.com",
         "127.0.0.1 www.reddit.com",
 
+        "127.0.0.1 tumblr.com",
+        "127.0.0.1 www.tumblr.com",
+
         "127.0.0.1 9gag.com",
         "127.0.0.1 www.9gag.com",
 
@@ -92,43 +95,85 @@ def main():
         with open(sys32hosts, "r+") as f:
                     content = f.read()
 
-        print("1. Block custom website")
+        print("1. Block website")
         print("2. Block major 18+ sites")
         print("3. Block Social Media")
         print("4. Show current content")
-        print("5. Exit")
+        print("5. Unblock a website")
+        print("10. Exit")
 
         choice = input("Choose an option: ").strip()
 
-        if choice == "2":
-            presetEighteenPlus()
-
-        elif choice == "3":
-            presetSocialMedia()
-
-        elif choice == "1":
+        if choice == "1":
             while True:
+                isAdded = False
                 site = input("Enter website (example.com): ").strip()
 
                 entries = [
-                    f"127.0.0.1 {site}.com",
+                    f"127.0.0.1 {site}",
                     f"127.0.0.1 www.{site}"
                 ]
 
-                with open(sys32hosts, "r+") as f:
-                    content = f.read()
-                    for entry in entries:
-                        if entry not in content:
-                            f.write("\n# ADDED BY JOLIFY\n" + entry)
+                with open(sys32hosts, "r") as f:
+                    lines = f.readlines()
+                    newLines = []
+                    for line in lines:
+                        if line.strip() not in entries:
+                            newLines.append(line)
+                        else:
+                            print(f"{site} is already blocked!")
+                            isAdded = True
+
+                    if isAdded == False:
+                        with open(sys32hosts, "w") as f:
+                            f.writelines(newLines)
+                            f.write("\n# ADDED BY JOLIFY\n")
+                            for entry in entries:
+                                f.write(entry + "\n")
+                
+               
+                            
+
                 print(f"{site} has been blocked succesfully!")
                 blockMore = input("Block another site?: ").lower().strip()
                 if blockMore == "n" or blockMore == "n":
                     break
 
+        elif choice == "2":
+            presetEighteenPlus()
+
+        elif choice == "3":
+            presetSocialMedia()
+
+        
+
         elif choice == "4":
             print(f"{content}" + "\n")
 
         elif choice == "5":
+            unblockSite = input("Enter website to unblock (example.com): ").strip()
+
+            entries = [
+                f"127.0.0.1 {unblockSite}",
+                f"127.0.0.1 www.{unblockSite}"
+            ]
+
+            with open(sys32hosts, "r") as f:
+                lines = f.readlines()
+                newLines = []
+
+                for line in lines:
+                    if line.strip() not in entries:
+                        newLines.append(line)
+                
+                print(f"{unblockSite} has been unblocked succesfully!")
+
+            with open(sys32hosts, "w") as f:
+                f.writelines(newLines)
+                        
+                    
+
+        elif choice == "10":
             break
 
         else:
