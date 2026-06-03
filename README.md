@@ -22,7 +22,7 @@ This does not replace a network wide router website blocker and is device specif
 To build Jolify yourself:
 1. Pull the Repo
 2. Make sure PyInstaller is installed using 'python -m pip install PyInstaller'
-3. Go into the repo and execute 'python -m PyInstaller --uac-admin --onefile --icon=jolify.ico jolify.py'
+3. Go into the repo and execute 'python -m PyInstaller --uac-admin --onefile --icon=jolify.ico main.py'
 4. Wait for it to finish then go into "dist" folder and click on "jolify.exe"
 
 ### Use case
