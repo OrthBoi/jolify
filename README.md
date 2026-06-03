@@ -1,4 +1,4 @@
-# Jolify 1.2.0 🙈
+# Jolify 1.3.0 beta 🙈
 ## Python Application to block websites on a device*
 
 Features:
@@ -8,6 +8,9 @@ Features:
 - Display current host file
 - Custom IP mapping for home router/nas/etc use
 - Clearing of host file
+- Backup creation and upload
+- Homefolder Folder structure
+- Changelogs
 
 ## DOCUMENTATION
 ### Detailed description
