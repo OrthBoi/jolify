@@ -5,12 +5,12 @@ Features:
 - Block and unblock custom websites
 - 18+ child safety preset**
 - Social Media preset**
-- Display current host file
-- Custom IP mapping for home router/nas/etc use
-- Clearing of host file
+- Display current host file content
+- Custom IP mapping for home router/NAS/etc use
+- Reset of host file to blank template
 - Backup creation and upload
-- Homefolder Folder structure
-- Changelogs
+- Folder structure for logs and backups
+- Changelogs to monitor all changes with datetime
 
 ## DOCUMENTATION
 ### Detailed description
@@ -20,10 +20,11 @@ This does not replace a network wide router website blocker and is device specif
 
 ### How to build
 To build Jolify yourself:
-1. Pull the Repo
-2. Make sure PyInstaller is installed using 'python -m pip install PyInstaller'
-3. Go into the repo and execute 'python -m PyInstaller --uac-admin --onefile --icon=jolify.ico main.py'
-4. Wait for it to finish then go into "dist" folder and click on "jolify.exe"
+1. Download the current latest version
+2. Open the folder in PowerShell
+3. Make sure PyInstaller is installed using 'python -m pip install PyInstaller'
+4. Inside the folder execute 'python -m PyInstaller --uac-admin --onefile --icon=jolify.ico --name Jolify main.py'
+5. Wait for it to finish then go into "dist" folder and click on "jolify.exe"
 
 ### Use case
 Want to make some website unreachable for a childs computer or maybe your router doesnt offer a simple domain to access it in your network?
