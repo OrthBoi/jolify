@@ -1,6 +1,6 @@
 # Jolify 1.3.0 beta 🙈
 ## Python Application to block websites on a device*
-
+![Jolify Menu](https://github.com/orthboi/jolify/blob/images]/Jolify.png?raw=true)
 Features:
 - Block and unblock custom websites
 - 18+ child safety preset**
@@ -27,8 +27,8 @@ Mac and Linux are not supported.
 To build Jolify yourself:
 1. Download the current latest version
 2. Open the folder in PowerShell
-3. Make sure PyInstaller is installed using '''python -m pip install PyInstaller'''
-4. Inside the folder execute '''python -m PyInstaller --uac-admin --onefile --icon=jolify.ico --name Jolify main.py'''
+3. Make sure PyInstaller is installed using <code>python -m pip install PyInstaller</code>
+4. Inside the folder execute <code>python -m PyInstaller --uac-admin --onefile --icon=jolify.ico --name Jolify main.py</code>
 5. Wait for it to finish then go into "dist" folder and click on "jolify.exe"
 
 ### Use case
