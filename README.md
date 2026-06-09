@@ -18,12 +18,17 @@ Jolify is simple python application build with one goal in mind: Modify the host
 By modifying this file the user can manually "block" websites by forcing the computer to use the host file as a dns lookup.
 This does not replace a network wide router website blocker and is device specific.
 
+## Supported platforms:
+Jolify has been developed and tested on Windows 11.
+Based on the knowledge that the file path to the hosts file is the same on Windows 11,10 and 8, Jolify should work just fine on those platforms too.
+Mac and Linux are not supported.
+
 ### How to build
 To build Jolify yourself:
 1. Download the current latest version
 2. Open the folder in PowerShell
-3. Make sure PyInstaller is installed using 'python -m pip install PyInstaller'
-4. Inside the folder execute 'python -m PyInstaller --uac-admin --onefile --icon=jolify.ico --name Jolify main.py'
+3. Make sure PyInstaller is installed using '''python -m pip install PyInstaller'''
+4. Inside the folder execute '''python -m PyInstaller --uac-admin --onefile --icon=jolify.ico --name Jolify main.py'''
 5. Wait for it to finish then go into "dist" folder and click on "jolify.exe"
 
 ### Use case
@@ -35,8 +40,6 @@ The only thing you need is this one application (which you can even delete after
 This is a personal learning project, you may use Jolify at your own risk.
 *It isnt guarenteed that API's of Website's will get blocked. Websites will only get blocked on the devic you ran the app on
 **The templates do not block all 18+ / Social Media apps, as it works using a predifined list. (feel free to add more sites using a pull request!)
-
-
 
 Maxim Kohanov
 02.06.2026
