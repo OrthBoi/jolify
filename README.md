@@ -1,7 +1,11 @@
 # Jolify 1.3.0 beta 🙈
 ## Python Application to block websites on a device*
-![Jolify Menu](https://github.com/orthboi/jolify/blob/images]/Jolify.png?raw=true)
-Features:
+
+## Technologies
+<img align="left" width="30px" src="https://camo.githubusercontent.com/b024a703f6c1dc4fca503f2d8663b6c69e2f2b8473e6461c35ed1ebbb4d3eabc/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f64657669636f6e732f64657669636f6e406c61746573742f69636f6e732f707974686f6e2f707974686f6e2d6f726967696e616c2e737667" style="max-width: 100%;">
+<br>
+
+## Features:
 - Block and unblock custom websites
 - 18+ child safety preset**
 - Social Media preset**
@@ -11,8 +15,7 @@ Features:
 - Backup creation and upload
 - Folder structure for logs and backups
 - Changelogs to monitor all changes with datetime
-
-## DOCUMENTATION
+  
 ### Detailed description
 Jolify is simple python application build with one goal in mind: Modify the host file in the Windows32 folder in all possible ways.
 By modifying this file the user can manually "block" websites by forcing the computer to use the host file as a dns lookup.
@@ -24,12 +27,14 @@ Based on the knowledge that the file path to the hosts file is the same on Windo
 Mac and Linux are not supported.
 
 ### How to build
-To build Jolify yourself:
-1. Download the current latest version
-2. Open the folder in PowerShell
-3. Make sure PyInstaller is installed using <code>python -m pip install PyInstaller</code>
-4. Inside the folder execute <code>python -m PyInstaller --uac-admin --onefile --icon=jolify.ico --name Jolify main.py</code>
-5. Wait for it to finish then go into "dist" folder and click on "jolify.exe"
+To build Jolify yourself make sure python is installed, run <code>python --version</code>
+<ul>
+  <li>Clone the repo using<code>git clone https://github.com/OrthBoi/jolify.git</code></li>
+  <li>Go into the repo</li>
+  <li>Make sure PyInstaller is installed using <code>python -m pip install PyInstaller</code></li>
+  <li>Inside the folder execute <code>python -m PyInstaller --uac-admin --onefile --icon=jolify.ico --name Jolify main.py</code></li>
+  <li>Wait for it to finish then go into "dist" folder and click on "jolify.exe"</li>
+</ul>
 
 ### Use case
 Want to make some website unreachable for a childs computer or maybe your router doesnt offer a simple domain to access it in your network?
