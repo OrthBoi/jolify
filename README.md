@@ -1,4 +1,4 @@
-# Jolify 1.3.0 beta 🙈
+# Jolify 🙈
 ## Python Application to block websites on a device*
 
 ## Technologies
